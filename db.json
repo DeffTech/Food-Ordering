@@ -1,0 +1,62 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Pizza",
+      "imageUrl": "./assets/images/pizza-slice-alt.png"
+    },
+    {
+      "id": 2,
+      "name": "Pasta",
+      "imageUrl": "./assets/images/pasta-alt.png"
+    },
+    {
+      "id": 3,
+      "name": "Seafood",
+      "imageUrl": "./assets/images/seafood-alt.png"
+    },
+    {
+      "id": 4,
+      "name": "Soft Drinks",
+      "imageUrl": "./assets/images/softdrinks-alt.png"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Primavera Pizza",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": true,
+      "monthTop": false,
+      "size": "",
+      "crust": "",
+      "ingredients": [
+        ""
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Pasta Pestp",
+      "imageUrl": "./assets/images/pizza-full.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": true,
+      "size": "",
+      "crust": "",
+      "ingredients": [
+        ""
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pasta"
+      }
+    }
+  ]
+}

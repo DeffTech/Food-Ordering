@@ -1,0 +1,197 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar class="ion-padding-horizontal">
+    <img class="profile-img" src="./assets/images/pp.jpg" />
+    <ion-icon slot="end" name="menu" size="large"></ion-icon>
+  </ion-toolbar>
+
+  <ion-toolbar class="ion-padding-horizontal" [appScrollVanish]="scrollArea">
+    <ion-text>
+      <h1 class="title-1">Food</h1>
+    </ion-text>
+    <ion-text>
+      <h1 class="title-2">Delivery</h1>
+    </ion-text>
+    <ion-searchbar animated></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" #scrollArea scrollEvents="true">
+  <ng-container *ngIf="categories; else elseTemplate">
+    <ion-grid fixed class="ion-padding">
+      <ion-row>
+        <ion-col size="12">
+          <ion-text>
+            <h1>Categories</h1>
+          </ion-text>
+          <ion-segment
+            scrollable
+            (ionChange)="segmentChanged($event)"
+          >
+            <ion-segment-button
+              *ngFor="let item of categories"
+              value="{{item.name}}"
+            >
+              <ion-card
+                class="category-card"
+                color="{{activeSegment === item.name ? 'primary' : 'light'}}"
+              >
+                <img class="category-img" src="{{item.imageUrl}}" alt="" />
+                <ion-text color="">
+                  <p>{{item.name}}</p>
+                </ion-text>
+                <ion-fab-button
+                  color="{{activeSegment === item.name ? 'light' : 'secondary'}}"
+                  size="small"
+                >
+                  <ion-icon
+                    name="chevron-forward-outline"
+                    color="{{activeSegment === item.name ? 'dark' : 'light'}}"
+                  ></ion-icon>
+                </ion-fab-button>
+              </ion-card>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-text>
+            <h1>Popular</h1>
+          </ion-text>
+          <ion-card class="product-card">
+            <ion-row>
+              <ion-col size="6" class="ion-no-padding">
+                <ion-row class="ion-padding">
+                  <ion-text>
+                    <ion-icon size="medium" color="primary" name="trophy"></ion-icon>
+                    <ion-label class="top">top of the week</ion-label>
+                    <h3>Primavera Pizza</h3>
+                    <p class="product-weight">Weight 540 gr</p>
+                  </ion-text>
+                </ion-row>
+                <ion-row class="ion-no-padding add-and-rating">
+                  <ion-col size="6" class="add-icon-container ion-no-padding" color="primary">
+                    <ion-button fill="clear">
+                      <ion-icon slot="icon-only" color="dark" name="add"></ion-icon>
+                    </ion-button>
+                  </ion-col>
+                  <ion-col size="6" class="rating-container ion-no-padding">
+                    <ion-text>
+                      <ion-icon color="dark" name="star"></ion-icon>
+                      <ion-label>5.0</ion-label>
+                    </ion-text>
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+              <ion-col size="6" class="product-img-container">
+                <img class="product-img" src="./assets/images/pizza-full-alt.png" alt="">
+              </ion-col>
+            </ion-row>
+          </ion-card>
+
+          <ion-card class="product-card">
+            <ion-row>
+              <ion-col size="6" class="ion-no-padding">
+                <ion-row class="ion-padding">
+                  <ion-text>
+                    <ion-icon size="medium" color="primary" name="trophy"></ion-icon>
+                    <ion-label class="top">top of the month</ion-label>
+                    <h3>Pasta Pesto</h3>
+                    <p class="product-weight">Weight 540 gr</p>
+                  </ion-text>
+                </ion-row>
+                <ion-row class="ion-no-padding add-and-rating">
+                  <ion-col size="6" class="add-icon-container ion-no-padding" color="primary">
+                    <ion-button fill="clear">
+                      <ion-icon slot="icon-only" color="dark" name="add"></ion-icon>
+                    </ion-button>
+                  </ion-col>
+                  <ion-col size="6" class="rating-container ion-no-padding">
+                    <ion-text>
+                      <ion-icon color="dark" name="star"></ion-icon>
+                      <ion-label>5.0</ion-label>
+                    </ion-text>
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+              <ion-col size="6" class="product-img-container">
+                <img class="product-img" src="./assets/images/pasta-full-alt.png" alt="">
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-container>
+
+
+
+
+  <ng-template #elseTemplate>
+    <div class="ion-padding custom-skeleton">
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      <ion-skeleton-text animated></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+    </div>
+
+    <ion-list>
+      <ion-list-header>
+        <ion-label>
+          <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+        </ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-skeleton-text
+          animated
+          style="width: 27px; height: 27px"
+          slot="start"
+        ></ion-skeleton-text>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-template>
+</ion-content>
