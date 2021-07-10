@@ -1,0 +1,108 @@
+ion-toolbar {
+  --background: var(--ion-color-tertiary-tint);
+}
+
+ion-back-button::part(native) {
+  border: .15rem solid var(--ion-color-light);
+  border-radius: 1rem;
+}
+
+ion-toolbar.title {
+  border-radius: 0 0 2rem 2rem;
+
+  ion-text.title {
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--ion-color-light);
+    }
+
+    span {
+      color: var(--ion-color-dark);
+      font-size: 2rem;
+    }
+  }
+
+  ion-searchbar {
+    --border-radius: 5rem;
+  }
+}
+
+ion-card.product-card {
+  width: 21.62rem;
+  height: 12.81rem;
+  overflow: visible;
+  border-radius: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  margin: 2rem 0;
+
+  ion-col.product-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ion-img.product-img {
+      position: relative;
+      left: 1.5rem;
+      width: 9rem;
+      height: 9rem;
+      -webkit-filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.19));
+      filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.19));
+    }
+  }
+
+  ion-col.product-details-container {
+
+    ion-text.product-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 8.06rem;
+      width: 8.8rem;
+    }
+
+    ion-label.top {
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-left: 0.5rem;
+    }
+
+    .product-weight {
+      color: var(--ion-color-medium);
+    }
+
+    ion-row.add-and-rating {
+
+      ion-col.add-icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--ion-color-primary);
+        border-radius: 0 2rem 0 2rem;
+      }
+
+      ion-col.rating-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        ion-text {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          ion-label {
+            font-weight: bold;
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+ion-card.product-card::part(native) {
+  border-radius: 2rem;
+}

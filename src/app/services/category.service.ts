@@ -20,4 +20,8 @@ export class CategoryService {
   getCategoryByName(name: string): Observable<Category> {
     return this.http.get<Category>(`${environment.baseUrl}/categories?name=${name}`);
   }
+
+  getCategoriesWithProducts(): Observable<Category[]> {
+    return this.http.get<Category[]>(`${environment.baseUrl}/categories?_embed=products`);
+  }
 }

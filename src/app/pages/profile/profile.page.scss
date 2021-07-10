@@ -1,0 +1,16 @@
+ion-back-button::part(native) {
+  border: 1px solid var(--ion-color-tertiary);
+  border-radius: 1rem;
+}
+
+ion-row.user-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+  }
+}

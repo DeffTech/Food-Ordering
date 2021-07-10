@@ -1,69 +1,46 @@
+import { ProductService } from './../../services/product.service';
+import { Product } from './../../models/product';
 import { CategoryService } from './../../services/category.service';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Product } from 'src/app/models/product';
-import { ProductService } from 'src/app/services/product.service';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { Category } from 'src/app/models/category';
-import { take } from 'rxjs/operators';
-import { IonInfiniteScroll } from '@ionic/angular';
+import { IonContent, IonList, IonSlides } from '@ionic/angular';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.page.html',
   styleUrls: ['./products.page.scss'],
 })
-export class ProductsPage implements OnInit {
+export class ProductsPage implements OnInit, AfterViewInit {
 
-  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+  @ViewChildren(IonList, { read: ElementRef }) lists: QueryList<ElementRef>;
+  @ViewChild(IonContent) content: IonContent;
+  @ViewChild(IonSlides) slides: IonSlides;
 
-  categoryName: string;
-  categoryImgUrl: string;
+  opts = {
+    freeMode: true,
+    slidesPerView: 2.8,
+    slidesOffsetBefore: 30,
+    slidesOffsetAfter: 100
+  };
 
+  categories: Category[];
   products: Product[];
+  entries: Category[];
+
+  activeCategory = 0;
+  listElements: ElementRef<any>[];
 
   filterTerm: string;
 
   constructor(
-    private productService: ProductService,
     private categoryService: CategoryService,
-    private route: ActivatedRoute
+    private productService: ProductService
   ) { }
 
   ngOnInit() {
-    this.categoryName = this.route.snapshot.params.category_name;
-    this.getCategoryImage();
-    this.getProducts();
-  }
-
-  getProducts() {
-    this.productService.getProductsByCategory(this.categoryName).subscribe((res: Product[]) => {
-      this.products = res;
-      // console.log('products: ' +this.products);
-    });
-  }
-
-  getCategoryImage() {
-    this.categoryService.getCategoryByName(this.categoryName).subscribe((res: Category) => {
-      this.categoryImgUrl = res[0].imageUrl;
-      // console.log('image url: ' +this.categoryImgUrl);
-    });
-  }
-
-  loadMore(event) {
-    setTimeout(() => {
-      console.log('Done');
-      event.target.complete();
-
-      // App logic to determine if all data is loaded
-      // and disable the infinite scroll
-      if (this.products.length < 0) {
-        event.target.disabled = true;
-      }
-    }, 500);
-  }
-
-  toggleInfiniteScroll() {
-    this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
+    this.getCategories();
+    // this.getProducts();
+    this.getEntries();
   }
 
   doRefresh(event) {
@@ -74,4 +51,55 @@ export class ProductsPage implements OnInit {
       event.target.complete();
     }, 2000);
   }
+
+  getCategories() {
+    this.categoryService.getCategories().subscribe((res: Category[]) => {
+      this.categories = res;
+    });
+  }
+
+  getProducts() {
+    this.productService.getProducts().subscribe((res: Product[]) => {
+      this.products = res;
+    });
+  }
+
+  getEntries() {
+    this.categoryService.getCategoriesWithProducts().subscribe((res: Category[]) => {
+      this.entries = res;
+      // console.log(this.entries);
+    });
+  }
+
+  ngAfterViewInit(): void {
+    this.lists.changes.subscribe(_ => {
+      this.listElements = this.lists.toArray();
+      // console.log(this.listElements);
+    });
+  }
+
+  selectCategory(index) {
+    const child = this.listElements[index].nativeElement;
+    this.content.scrollToPoint(0, child.offsetTop - 150, 1000);
+  }
+
+  onScroll(ev) {
+    // eslint-disable-next-line @typescript-eslint/prefer-for-of
+    for (let i = 0; i < this.listElements.length; i++) {
+      const item = this.listElements[i].nativeElement;
+      if (this.isElementInViewport(item)) {
+        // console.log('IS VISIBLE');
+        this.activeCategory = i;
+        this.slides.slideTo(i);
+        break;
+      }
+    }
+  }
+
+  isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (rect.height + rect.top) - 150 > 0;
+  }
 }
+
+

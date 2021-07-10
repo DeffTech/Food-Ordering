@@ -1,7 +1,8 @@
 <ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar class="ion-padding-horizontal">
-    <img class="profile-img" src="./assets/images/pp.jpg" />
-
+    <a routerLink="/profile">
+      <img routerlink="/profile" class="profile-img" src="./assets/images/pp.jpg" />
+    </a>
     <ion-buttons slot="end">
       <ion-menu-button menu="menu-content" color="tertiary">
         <ion-icon name="reorder-two-outline" size="large"></ion-icon>
@@ -44,6 +45,7 @@
               fill="clear"
               color="tertiary"
               shape="round"
+              routerLink="/products"
             >
               view all
             </ion-button>
@@ -52,7 +54,7 @@
             <ion-segment-button
               *ngFor="let item of categories"
               value="{{item.name}}"
-              routerLink="/products/{{item.name}}"
+              routerLink="/category-products/{{item.name}}"
             >
               <ion-card
                 class="category-card"
@@ -85,6 +87,7 @@
               fill="clear"
               color="tertiary"
               shape="round"
+              routerLink="/products"
             >
               view all
             </ion-button>

@@ -3,22 +3,26 @@
     {
       "id": 1,
       "name": "Pizza",
-      "imageUrl": "./assets/images/pizza-slice-alt.png"
+      "imageUrl": "./assets/images/pizza-slice-alt.png",
+      "headImageUrl": "./assets/images/pizza-header.jpg"
     },
     {
       "id": 2,
       "name": "Pasta",
-      "imageUrl": "./assets/images/pasta-alt.png"
+      "imageUrl": "./assets/images/pasta-alt.png",
+      "headImageUrl": "./assets/images/pasta-header.jpg"
     },
     {
       "id": 3,
       "name": "Seafood",
-      "imageUrl": "./assets/images/seafood-alt.png"
+      "imageUrl": "./assets/images/seafood-alt.png",
+      "headImageUrl": "./assets/images/seafood-header.jpg"
     },
     {
       "id": 4,
       "name": "Soft Drinks",
-      "imageUrl": "./assets/images/softdrinks-alt.png"
+      "imageUrl": "./assets/images/softdrinks-alt.png",
+      "headImageUrl": "./assets/images/drinks-header.jpg"
     }
   ],
   "products": [
@@ -50,10 +54,7 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 1
     },
     {
       "id": 2,
@@ -85,7 +86,8 @@
       ],
       "category": {
         "id": 1,
-        "name": "Pizza"
+        "name": "Pizza",
+        "imageUrl": "./assets/images/pizza-slice-alt.png"
       }
     },
     {
@@ -116,10 +118,7 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 2
     },
     {
       "id": 4,
@@ -149,10 +148,7 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 3
     },
     {
       "id": 5,
@@ -182,10 +178,7 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 4
     },
     {
       "id": 6,
@@ -215,10 +208,7 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 1
     },
     {
       "id": 7,
@@ -248,10 +238,7 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 2
     },
     {
       "id": 8,
@@ -281,10 +268,7 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 3
     },
     {
       "id": 9,
@@ -314,10 +298,7 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 4
     },
     {
       "id": 10,
@@ -347,13 +328,10 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 1
     },
     {
-      "id": 10,
+      "id": 11,
       "name": "Primavera Pizza",
       "price": "5.99",
       "imageUrl": "./assets/images/pizza-full-alt.png",
@@ -380,13 +358,10 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 2
     },
     {
-      "id": 10,
+      "id": 12,
       "name": "Primavera Pizza",
       "price": "5.99",
       "imageUrl": "./assets/images/pizza-full-alt.png",
@@ -413,13 +388,10 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 3
     },
     {
-      "id": 10,
+      "id": 13,
       "name": "Primavera Pizza",
       "price": "5.99",
       "imageUrl": "./assets/images/pizza-full-alt.png",
@@ -446,13 +418,10 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 4
     },
     {
-      "id": 10,
+      "id": 14,
       "name": "Primavera Pizza",
       "price": "5.99",
       "imageUrl": "./assets/images/pizza-full-alt.png",
@@ -479,13 +448,10 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 1
     },
     {
-      "id": 10,
+      "id": 15,
       "name": "Primavera Pizza",
       "price": "5.99",
       "imageUrl": "./assets/images/pizza-full-alt.png",
@@ -512,13 +478,10 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 2
     },
     {
-      "id": 10,
+      "id": 16,
       "name": "Primavera Pizza",
       "price": "5.99",
       "imageUrl": "./assets/images/pizza-full-alt.png",
@@ -545,13 +508,10 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 3
     },
     {
-      "id": 10,
+      "id": 17,
       "name": "Primavera Pizza",
       "price": "5.99",
       "imageUrl": "./assets/images/pizza-full-alt.png",
@@ -578,13 +538,10 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 4
     },
     {
-      "id": 10,
+      "id": 18,
       "name": "Primavera Pizza",
       "price": "5.99",
       "imageUrl": "./assets/images/pizza-full-alt.png",
@@ -611,13 +568,10 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 1
     },
     {
-      "id": 10,
+      "id": 19,
       "name": "Primavera Pizza",
       "price": "5.99",
       "imageUrl": "./assets/images/pizza-full-alt.png",
@@ -644,13 +598,10 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 2
     },
     {
-      "id": 10,
+      "id": 20,
       "name": "Primavera Pizza",
       "price": "5.99",
       "imageUrl": "./assets/images/pizza-full-alt.png",
@@ -677,13 +628,10 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 3
     },
     {
-      "id": 10,
+      "id": 21,
       "name": "Primavera Pizza",
       "price": "5.99",
       "imageUrl": "./assets/images/pizza-full-alt.png",
@@ -710,10 +658,7 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza"
-      }
+      "categoryId": 4
     }
   ]
 }

@@ -1,9 +1,25 @@
-<ion-header>
+<ion-header class="ion-no-border ion-padding">
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+        icon="chevron-back-outline"
+        color="tertiary"
+        defaultHref="/home"
+      ></ion-back-button>
+    </ion-buttons>
+
+    <ion-text class="ion-text-center">
+      <h3>My Profile</h3>
+    </ion-text>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen class="ion-padding">
+
+  <ion-grid fixed>
+    <ion-row class="user-img">
+      <img src="./assets/images/pp.jpg" />
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
