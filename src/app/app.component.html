@@ -1,3 +1,26 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu
+    contentId="menu-content"
+    menuId="menu-content"
+    side="end"
+    type="overlay"
+  >
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-title class="ion-text-center">my menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content fullscreen>
+      <ion-list>
+        <ion-row class="img-row ion-margin-bottom">
+            <img src="./assets/images/food.png" alt="">
+        </ion-row>
+        <ion-item routerLink="/home">
+          <ion-icon size="large" color="tertiary" slot="start" name="home-outline"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="menu-content"></ion-router-outlet>
 </ion-app>

@@ -1,0 +1,87 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-padding">
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()" fill="clear" color="tertiary">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar class="ion-padding">
+    <ion-title>What are you looking for ?</ion-title>
+    <ion-searchbar
+      debounce="500"
+      color="light"
+      (ionChange)="search($event)"
+      placeholder="Enter Keyword..."
+    ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div *ngIf="filteredProducts.length > 0">
+          <ion-card class="product-card" *ngFor="let item of filteredProducts" (click)="navigateToProductDetail(item.id)" >
+            <ion-row class="ion-padding-vertical">
+              <ion-col size="4" class="product-img-container">
+                <ion-img class="product-img" [src]="item?.imageUrl"></ion-img>
+              </ion-col>
+              <ion-col size="6" class="ion-no-padding">
+                <ion-text>
+                  <div *ngIf="item.weekTop || item.monthTop">
+                    <ion-icon size="medium" color="primary" name="trophy"></ion-icon>
+                  <ion-label class="top">
+                    top of the
+                    <span *ngIf="item.weekTop">
+                      Week
+                    </span>
+                    <span *ngIf="item.monthTop">
+                      Month
+                    </span>
+                  </ion-label>
+                  </div>
+                  <h4>{{item?.name}}</h4>
+                  <p class="product-category">{{item?.category.name}}</p>
+                </ion-text>
+              </ion-col>
+              <ion-col size="2" class="rating-container ion-no-padding">
+                <ion-text>
+                  <ion-icon color="light" name="star"></ion-icon>
+                  <ion-label>{{item?.rating}}</ion-label>
+                </ion-text>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </div>
+
+        <!--SHOW THE SKELETON TEXT -->
+        <ion-list *ngIf="showSkeleton">
+          <ion-item *ngFor="let d of [].constructor(5)">
+            <ion-thumbnail>
+             <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-thumbnail>
+            <ion-label>
+              <h4><ion-skeleton-text animated style="width: 60%;"></ion-skeleton-text></h4>
+              <ion-text>
+                <p><ion-skeleton-text animated style="width: 40%;"></ion-skeleton-text></p>
+              </ion-text>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+
+        <!-- NO ITEMS FOUND -->
+        <ion-list *ngIf="filteredProducts.length<= 0 && touched" lines="none">
+          <ion-item>
+            <ion-label>
+              <h3>No Products Found</h3>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

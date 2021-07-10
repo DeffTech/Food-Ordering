@@ -1,9 +1,153 @@
-<ion-header>
+<ion-header class="ion-no-border ion-padding">
   <ion-toolbar>
-    <ion-title>detail</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+        icon="chevron-back-outline"
+        defaultHref="/home"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end" class="star-icon-container">
+      <ion-button>
+        <ion-icon name="star" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <!-- <ion-buttons slot="end">
+      <ion-menu-button menu="menu-content" size="large" color="tertiary"></ion-menu-button>
+    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" class="ion-padding">
 
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ng-container *ngIf="product; else elseTemplate">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-text>
+          <p class="product-category">{{product.category.name}}</p>
+          <h1 class="product-name">{{product.name}}</h1>
+          <h1 class="product-price"><span>$</span> {{product.price}}</h1>
+        </ion-text>
+      </ion-row>
+
+      <ion-row class="product-details">
+        <ion-col size="6" class="product-properties">
+          <ion-text>
+            <p>Size</p>
+            <h1>{{product.size}}</h1>
+          </ion-text>
+          <ion-text>
+            <p>Crust</p>
+            <h1>{{product.crust}}</h1>
+          </ion-text>
+          <ion-text>
+            <p>Delivery in</p>
+            <h1>30 min</h1>
+          </ion-text>
+        </ion-col>
+        <ion-col size="6" class="product-img-container">
+          <img class="product-img" src="{{product.imageUrl}}" alt="" />
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ingredients">
+        <ion-col size="12">
+          <ion-text>
+            <h1 class="ingredients-title">Ingredients</h1>
+          </ion-text>
+          <ion-slides pager>
+            <ion-slide>
+              <ion-card
+                *ngFor="let item of product.ingredients"
+                class="ion-padding"
+              >
+                <img class="ingredient-img" src="{{item.imageUrl}}" alt="" />
+              </ion-card>
+            </ion-slide>
+          </ion-slides>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-container>
+
+  <ng-template #elseTemplate>
+    <div class="ion-padding custom-skeleton">
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      <ion-skeleton-text animated></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+    </div>
+
+    <ion-list>
+      <ion-list-header>
+        <ion-label>
+          <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+        </ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-skeleton-text
+          animated
+          style="width: 27px; height: 27px"
+          slot="start"
+        ></ion-skeleton-text>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-template>
 </ion-content>
+
+<ion-footer class="ion-padding-horizontal ion-no-border">
+  <ion-row>
+    <ion-text color="dark">
+      <p>Place an Order</p>
+      <ion-icon color="dark" name="chevron-forward-outline"></ion-icon>
+    </ion-text>
+  </ion-row>
+</ion-footer>

@@ -1,7 +1,12 @@
 <ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar class="ion-padding-horizontal">
     <img class="profile-img" src="./assets/images/pp.jpg" />
-    <ion-icon slot="end" name="menu" size="large"></ion-icon>
+
+    <ion-buttons slot="end">
+      <ion-menu-button menu="menu-content" color="tertiary">
+        <ion-icon name="reorder-two-outline" size="large"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 
   <ion-toolbar class="ion-padding-horizontal" [appScrollVanish]="scrollArea">
@@ -11,25 +16,43 @@
     <ion-text>
       <h1 class="title-2">Delivery</h1>
     </ion-text>
-    <ion-searchbar animated></ion-searchbar>
+    <ion-button class="search-btn" (click)="presentModal()">
+      <ion-icon slot="end" name="search-outline"></ion-icon>
+      Find something...
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding" #scrollArea scrollEvents="true">
+<ion-content
+  [fullscreen]="true"
+  class="ion-padding"
+  #scrollArea
+  scrollEvents="true"
+>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
   <ng-container *ngIf="categories; else elseTemplate">
     <ion-grid fixed class="ion-padding">
       <ion-row>
         <ion-col size="12">
-          <ion-text>
+          <ion-text class="section-title">
             <h1>Categories</h1>
+            <ion-button
+              expand="block"
+              fill="clear"
+              color="tertiary"
+              shape="round"
+            >
+              view all
+            </ion-button>
           </ion-text>
-          <ion-segment
-            scrollable
-            (ionChange)="segmentChanged($event)"
-          >
+          <ion-segment scrollable (ionChange)="segmentChanged($event)">
             <ion-segment-button
               *ngFor="let item of categories"
               value="{{item.name}}"
+              routerLink="/products/{{item.name}}"
             >
               <ion-card
                 class="category-card"
@@ -55,67 +78,107 @@
       </ion-row>
       <ion-row>
         <ion-col size="12">
-          <ion-text>
+          <ion-text class="section-title">
             <h1>Popular</h1>
+            <ion-button
+              expand="block"
+              fill="clear"
+              color="tertiary"
+              shape="round"
+            >
+              view all
+            </ion-button>
           </ion-text>
-          <ion-card class="product-card">
+          <ion-card
+            class="product-card"
+            *ngFor="let item of weekTopProducts"
+            routerLink="/detail/{{item.id}}"
+          >
             <ion-row>
               <ion-col size="6" class="ion-no-padding">
                 <ion-row class="ion-padding">
                   <ion-text>
-                    <ion-icon size="medium" color="primary" name="trophy"></ion-icon>
+                    <ion-icon
+                      size="medium"
+                      color="primary"
+                      name="trophy"
+                    ></ion-icon>
                     <ion-label class="top">top of the week</ion-label>
-                    <h3>Primavera Pizza</h3>
-                    <p class="product-weight">Weight 540 gr</p>
+                    <h3>{{item?.name}}</h3>
+                    <p class="product-weight">Weight {{item?.weight}}</p>
                   </ion-text>
                 </ion-row>
                 <ion-row class="ion-no-padding add-and-rating">
-                  <ion-col size="6" class="add-icon-container ion-no-padding" color="primary">
+                  <ion-col
+                    size="6"
+                    class="add-icon-container ion-no-padding"
+                    color="primary"
+                  >
                     <ion-button fill="clear">
-                      <ion-icon slot="icon-only" color="dark" name="add"></ion-icon>
+                      <ion-icon
+                        slot="icon-only"
+                        color="dark"
+                        name="add"
+                      ></ion-icon>
                     </ion-button>
                   </ion-col>
                   <ion-col size="6" class="rating-container ion-no-padding">
                     <ion-text>
                       <ion-icon color="dark" name="star"></ion-icon>
-                      <ion-label>5.0</ion-label>
+                      <ion-label>{{item?.rating}}</ion-label>
                     </ion-text>
                   </ion-col>
                 </ion-row>
               </ion-col>
               <ion-col size="6" class="product-img-container">
-                <img class="product-img" src="./assets/images/pizza-full-alt.png" alt="">
+                <img class="product-img" src="{{item?.imageUrl}}" alt="" />
               </ion-col>
             </ion-row>
           </ion-card>
 
-          <ion-card class="product-card">
+          <ion-card
+            class="product-card"
+            *ngFor="let item of monthTopProducts"
+            routerLink="/detail/{{item.id}}"
+          >
             <ion-row>
               <ion-col size="6" class="ion-no-padding">
                 <ion-row class="ion-padding">
                   <ion-text>
-                    <ion-icon size="medium" color="primary" name="trophy"></ion-icon>
+                    <ion-icon
+                      size="medium"
+                      color="primary"
+                      name="trophy"
+                    ></ion-icon>
                     <ion-label class="top">top of the month</ion-label>
-                    <h3>Pasta Pesto</h3>
-                    <p class="product-weight">Weight 540 gr</p>
+                    <h3>{{item?.name}}</h3>
+                    <p class="product-weight">Weight {{item?.weight}}</p>
                   </ion-text>
                 </ion-row>
                 <ion-row class="ion-no-padding add-and-rating">
-                  <ion-col size="6" class="add-icon-container ion-no-padding" color="primary">
+                  <ion-col
+                    size="6"
+                    class="add-icon-container ion-no-padding"
+                    color="primary"
+                  >
                     <ion-button fill="clear">
-                      <ion-icon slot="icon-only" color="dark" name="add"></ion-icon>
+                      <ion-icon
+                        slot="icon-only"
+                        color="dark"
+                        name="add"
+                      ></ion-icon>
                     </ion-button>
                   </ion-col>
                   <ion-col size="6" class="rating-container ion-no-padding">
                     <ion-text>
                       <ion-icon color="dark" name="star"></ion-icon>
-                      <ion-label>5.0</ion-label>
+                      <ion-label>{{item?.rating}}</ion-label>
                     </ion-text>
                   </ion-col>
                 </ion-row>
               </ion-col>
               <ion-col size="6" class="product-img-container">
-                <img class="product-img" src="./assets/images/pasta-full-alt.png" alt="">
+                <img class="product-img" src="{{item?.imageUrl}}" alt="" />
               </ion-col>
             </ion-row>
           </ion-card>
@@ -123,9 +186,6 @@
       </ion-row>
     </ion-grid>
   </ng-container>
-
-
-
 
   <ng-template #elseTemplate>
     <div class="ion-padding custom-skeleton">

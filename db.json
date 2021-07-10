@@ -25,15 +25,30 @@
     {
       "id": 1,
       "name": "Primavera Pizza",
+      "price": "5.99",
       "imageUrl": "./assets/images/pizza-full-alt.png",
       "weight": "540 gr",
       "rating": "5.0",
       "weekTop": true,
       "monthTop": false,
-      "size": "",
-      "crust": "",
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
       "ingredients": [
-        ""
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
       ],
       "category": {
         "id": 1,
@@ -42,20 +57,662 @@
     },
     {
       "id": 2,
-      "name": "Pasta Pestp",
-      "imageUrl": "./assets/images/pizza-full.png",
+      "name": "Azert Azerty",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
       "weight": "540 gr",
       "rating": "5.0",
       "weekTop": false,
       "monthTop": true,
-      "size": "",
-      "crust": "",
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
       "ingredients": [
-        ""
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
       ],
       "category": {
         "id": 1,
-        "name": "Pasta"
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Azerty",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Qwerty",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Azertyu",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Primavera Pizza",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Primavera Pizza",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Primavera Pizza",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Primavera Pizza",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Primavera Pizza",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Primavera Pizza",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Primavera Pizza",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Primavera Pizza",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Primavera Pizza",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Primavera Pizza",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Primavera Pizza",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Primavera Pizza",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Primavera Pizza",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Primavera Pizza",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Primavera Pizza",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Primavera Pizza",
+      "price": "5.99",
+      "imageUrl": "./assets/images/pizza-full-alt.png",
+      "weight": "540 gr",
+      "rating": "5.0",
+      "weekTop": false,
+      "monthTop": false,
+      "size": "Medium 14\"",
+      "crust": "Thin Crust",
+      "ingredients": [
+        {
+          "id": 1,
+          "name": "filet",
+          "imageUrl": "./assets/images/filet-alt.jpg"
+        },
+        {
+          "id": 2,
+          "name": "tomato sauce",
+          "imageUrl": "./assets/images/tomato-sauce-alt.jpg"
+        },
+        {
+          "id": 3,
+          "name": "idk",
+          "imageUrl": "./assets/images/idk-alt.jpg"
+        }
+      ],
+      "category": {
+        "id": 1,
+        "name": "Pizza"
       }
     }
   ]

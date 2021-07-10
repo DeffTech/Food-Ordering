@@ -1,9 +1,85 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>products</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-padding-horizontal">
+    <ion-buttons slot="start">
+      <ion-back-button
+        icon="chevron-back-outline"
+        defaultHref="/home"
+        color="light"
+      ></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-menu-button menu="menu-content" color="light">
+        <ion-icon name="reorder-two-outline" size="large"></ion-icon>
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar class="title ion-padding" [appScrollVanish]="scrollArea">
+      <ion-text color="primary" class="title">
+        <h1>{{categoryName}}'s <span>Collection</span> </h1>
+      </ion-text>
+      <ion-searchbar
+        showCancelButton="focus"
+        enterkeyhint="search"
+        animated
+        placeholder="Find my {{categoryName}} ..."
+        [(ngModel)]="filterTerm"
+      ></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" class="ion-padding" #scrollArea scrollEvents="true">
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid fixed class="ion-padding">
+
+    <ion-row>
+      <ion-card class="product-card" *ngFor="let item of products | filter:filterTerm" routerLink="/detail/{{item.id}}">
+        <ion-row>
+          <ion-col size="6" class="ion-no-padding product-details-container">
+            <ion-row class="ion-padding">
+              <ion-text class="product-details">
+                <div *ngIf="item.weekTop || item.monthTop">
+                  <ion-icon size="medium" color="primary" name="trophy"></ion-icon>
+                <ion-label class="top">
+                  top of the
+                  <span *ngIf="item.weekTop">
+                    Week
+                  </span>
+                  <span *ngIf="item.monthTop">
+                    Month
+                  </span>
+                </ion-label>
+                </div>
+                <h3>{{item?.name}}</h3>
+                <p class="product-weight">Weight {{item?.weight}}</p>
+              </ion-text>
+            </ion-row>
+            <ion-row class="ion-no-padding add-and-rating">
+              <ion-col size="6" class="add-icon-container ion-no-padding" color="primary">
+                <ion-button fill="clear">
+                  <ion-icon slot="icon-only" color="dark" name="add"></ion-icon>
+                </ion-button>
+              </ion-col>
+              <ion-col size="6" class="rating-container ion-no-padding">
+                <ion-text>
+                  <ion-icon color="dark" name="star"></ion-icon>
+                  <ion-label>{{item?.rating}}</ion-label>
+                </ion-text>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+          <ion-col size="6" class="product-img-container">
+            <ion-img class="product-img" [src]="item?.imageUrl"></ion-img>
+            <!-- <img class="product-img" src="{{item?.imageUrl}}" alt=""> -->
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

@@ -1,0 +1,13 @@
+ion-toolbar {
+  --background: var(--ion-color-tertiary-tint);
+}
+
+ion-item {
+  border-radius: 2rem;
+  --border-color: var(--ion-color-tertiary-tint);
+
+  ion-label {
+    font-size: 1.5rem;
+    font-family: inherit;
+  }
+}

@@ -1,3 +1,4 @@
+import { SearchComponent } from './../../components/search/search.component';
 import { SharedDirectivesModule } from '../../directives/shared-directives.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -16,6 +17,9 @@ import { HomePageRoutingModule } from './home-routing.module';
     HomePageRoutingModule,
     SharedDirectivesModule
   ],
-  declarations: [HomePage]
+  declarations: [
+    HomePage,
+    SearchComponent
+  ]
 })
 export class HomePageModule {}

@@ -16,4 +16,8 @@ export class CategoryService {
   getCategories(): Observable<Category[]> {
     return this.http.get<Category[]>(`${environment.baseUrl}/categories`);
   }
+
+  getCategoryByName(name: string): Observable<Category> {
+    return this.http.get<Category>(`${environment.baseUrl}/categories?name=${name}`);
+  }
 }

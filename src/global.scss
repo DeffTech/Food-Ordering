@@ -25,9 +25,19 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+// Bootstrap 5.0
+// @import "~bootstrap/dist/css/bootstrap.css";
+
 // Roboto Font
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
+//  Lato Font
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300&display=swap');
+
+//  Josephin Sans Font
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
+
 * {
-  font-family: 'Roboto', sans-serif;
+  // font-family: 'Lato', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }

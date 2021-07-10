@@ -20,4 +20,20 @@ export class ProductService {
   getProductById(id: any): Observable<Product> {
     return this.http.get<Product>(`${environment.baseUrl}/products/${id}`);
   }
+
+  getWeekTopProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${environment.baseUrl}/products?weekTop=true`);
+  }
+
+  getMonthTopProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${environment.baseUrl}/products?monthTop=true`);
+  }
+
+  getProductsByCategory(name: string): Observable<Product[]> {
+    return this.http.get<Product[]>(`${environment.baseUrl}/products?category.name=${name}`);
+  }
+
+  searchProducts(keyword: string): Observable<Product[]> {
+    return this.http.get<Product[]>(`${environment.baseUrl}/products?q=${keyword}`);
+  }
 }
