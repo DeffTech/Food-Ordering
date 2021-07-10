@@ -84,11 +84,7 @@
           "imageUrl": "./assets/images/idk-alt.jpg"
         }
       ],
-      "category": {
-        "id": 1,
-        "name": "Pizza",
-        "imageUrl": "./assets/images/pizza-slice-alt.png"
-      }
+      "categoryId": 3
     },
     {
       "id": 3,

@@ -18,7 +18,7 @@ export class ProductService {
   }
 
   getProductById(id: any): Observable<Product> {
-    return this.http.get<Product>(`${environment.baseUrl}/products/${id}`);
+    return this.http.get<Product>(`${environment.baseUrl}/products/${id}/?_expand=category`);
   }
 
   getWeekTopProducts(): Observable<Product[]> {
@@ -34,6 +34,6 @@ export class ProductService {
   }
 
   searchProducts(keyword: string): Observable<Product[]> {
-    return this.http.get<Product[]>(`${environment.baseUrl}/products?q=${keyword}`);
+    return this.http.get<Product[]>(`${environment.baseUrl}/products?q=${keyword}&_expand=category`);
   }
 }

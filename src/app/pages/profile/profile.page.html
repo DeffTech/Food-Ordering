@@ -16,9 +16,26 @@
 
 <ion-content fullscreen class="ion-padding">
 
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
   <ion-grid fixed>
-    <ion-row class="user-img">
-      <img src="./assets/images/pp.jpg" />
+    <ion-row class="user-img-row">
+      <img class="user-img" [src]="photoService.photo?.webviewPath || './assets/images/pp.jpg'"  (click)="showActionSheet(photoService.photo)" />
+      <ion-button (click)="addPhotoToGallery()" color="tertiary" expand="block" fill="outline" shape="round">
+        <ion-icon slot="icon-only" name="camera-outline"></ion-icon>
+      </ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-segment value="pizza" (ionChange)="segmentChanged($event)" color="tertiary">
+        <ion-segment-button value="pizza">
+          <ion-label>Pizza</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="pasta">
+          <ion-label>Pasta</ion-label>
+        </ion-segment-button>
+      </ion-segment>
     </ion-row>
   </ion-grid>
 

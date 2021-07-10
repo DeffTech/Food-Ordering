@@ -3,14 +3,23 @@ ion-back-button::part(native) {
   border-radius: 1rem;
 }
 
-ion-row.user-img {
+ion-row.user-img-row {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  img {
+  img.user-img {
     height: 8rem;
     width: 8rem;
+    border: .25rem solid var(--ion-color-tertiary-tint);
     border-radius: 50%;
   }
+}
+
+.active-category {
+  --background: var(--ion-color-primary);
+  --color: var(--ion-color-dark);
+  --border-radius: 1.875rem;
+  font-weight: 600;
 }

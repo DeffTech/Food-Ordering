@@ -17,13 +17,13 @@
 
   <ion-toolbar class="title ion-padding" [appScrollVanish]="scrollArea">
       <ion-text color="primary" class="title">
-        <h1>{{categoryName}}'s <span>Collection</span> </h1>
+        <h1>{{entry?.name}}'s <span>Collection</span> </h1>
       </ion-text>
       <ion-searchbar
         showCancelButton="focus"
         enterkeyhint="search"
         animated
-        placeholder="Find my {{categoryName}} ..."
+        placeholder="Find my {{entry?.name}} ..."
         [(ngModel)]="filterTerm"
       ></ion-searchbar>
   </ion-toolbar>
@@ -38,7 +38,7 @@
   <ion-grid fixed class="ion-padding">
 
     <ion-row>
-      <ion-card class="product-card" *ngFor="let item of products | filter:filterTerm" routerLink="/detail/{{item.id}}">
+      <ion-card class="product-card" *ngFor="let item of entry?.products | filter:filterTerm" routerLink="/detail/{{item.id}}">
         <ion-row>
           <ion-col size="6" class="ion-no-padding product-details-container">
             <ion-row class="ion-padding">

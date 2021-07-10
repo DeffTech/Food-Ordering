@@ -1,7 +1,7 @@
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from './../../models/product';
-import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { IonSearchbar, ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent implements OnInit, AfterViewInit {
+
+  @ViewChild(IonSearchbar) searchBar: IonSearchbar;
 
   filteredProducts: Product[] = [];
   showSkeleton: boolean;
@@ -20,6 +22,12 @@ export class SearchComponent implements OnInit {
     private productService: ProductService,
     private router: Router
   ) { }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.searchBar.setFocus();
+    }, 1000);
+  }
 
   ngOnInit() {}
 
@@ -36,7 +44,7 @@ export class SearchComponent implements OnInit {
     this.filteredProducts = [];
     this.showSkeleton = true;
     this.productService.searchProducts(ev.target.value).subscribe((prods: Product[]) => {
-      console.log('keyword: ' + ev.target.value + '/ results: ' + prods);
+      console.log(prods);
       if (prods.length <= 0) {
         this.touched = true;
       } else {

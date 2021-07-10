@@ -24,4 +24,8 @@ export class CategoryService {
   getCategoriesWithProducts(): Observable<Category[]> {
     return this.http.get<Category[]>(`${environment.baseUrl}/categories?_embed=products`);
   }
+
+  getCategoryProducts(id): Observable<Category> {
+    return this.http.get<Category>(`${environment.baseUrl}/categories/${id}?_embed=products`);
+  }
 }
