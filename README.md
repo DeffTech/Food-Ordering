@@ -1,7 +1,9 @@
-<!-- Repository git : https://github.com/ -->
-# Plant-care-app
+<!-- Repository git : https://github.com/DeffTech/Food-Ordering -->
+# Food-Ordering
 
 <!-- Description -->
+![output1](/readme/output1.png)
+
 
 ## Context
 <!-- Why am i making this -->
@@ -10,7 +12,7 @@
 ## Tools used
 <!-- Packages, external librairies, IDE, utilitaries used -->
 * [VS Code](https://code.visualstudio.com/)
-* [Node JS](https://nodejs.dev/)
+* [Node JS](https://nodejs.dev/) `v14.15.1`
 
 
 ## How does it work
@@ -31,11 +33,19 @@ ionic serve
 ## Output:
 
 <!-- What the result is supposed to be -->
-<!--
+
 ![output1](/readme/output1.png)
 
 ![output2](/readme/output2.png)
--->
+
+![output1](/readme/output3.png)
+
+![output2](/readme/output4.png)
+
+![output1](/readme/output5.png)
+
+![output2](/readme/output6.png)
+
 
 ## About Authors / Contributors
 
